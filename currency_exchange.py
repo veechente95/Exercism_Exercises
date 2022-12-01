@@ -1,4 +1,6 @@
 def exchange_money(budget, exchange_rate):
+    return budget / exchange_rate
+
     """
 
     :param budget: float - amount of money you are planning to exchange.
