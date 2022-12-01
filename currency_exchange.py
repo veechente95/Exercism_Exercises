@@ -10,6 +10,7 @@ def exchange_money(budget, exchange_rate):
 
 def get_change(budget, exchanging_value):
     return float(budget - exchanging_value)
+   
     """
 
     :param budget: float - amount of money you own.
@@ -34,6 +35,8 @@ def get_value_of_bills(denomination, number_of_bills):
 
 
 def get_number_of_bills(budget, denomination):
+    return int(budget / denomination) 
+    
     """
 
     :param budget: float - the amount of money you are planning to exchange.
@@ -45,6 +48,8 @@ def get_number_of_bills(budget, denomination):
 
 
 def get_leftover_of_bills(budget, denomination):
+    return budget % denomination 
+    
     """
 
     :param budget: float - the amount of money you are planning to exchange.
@@ -56,6 +61,10 @@ def get_leftover_of_bills(budget, denomination):
 
 
 def exchangeable_value(budget, exchange_rate, spread, denomination):
+    actual_exchange_rate = exchange_rate + exchange_rate * (spread / 100)
+    exchange = budget / actual_exchange_rate
+    return exchange - exchange % denomination
+
     """
 
     :param budget: float - the amount of your money you are planning to exchange.
