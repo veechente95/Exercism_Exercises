@@ -7,3 +7,10 @@
 # 153 is an Armstrong number, because: 153 = 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
 # 154 is not an Armstrong number, because: 154 != 1^3 + 5^3 + 4^3 = 1 + 125 + 64 = 190
 
+def is_armstrong_number(number):
+    num_digits = list(str(number))
+    power = len(num_digits)
+    digit_sum = 0
+    for num in num_digits:
+        digit_sum += int(num)**power
+    return digit_sum == number 
