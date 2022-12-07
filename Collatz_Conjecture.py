@@ -3,9 +3,15 @@
 # Repeat the process indefinitely. The conjecture states that no matter which number you start with, you will always reach 1 eventually.
 # Given a number n, return the number of steps required to reach 1.
 
+
 def steps(number):
-    if number % 2 == 0:
-        return number / 2
-    else:
-        if number % 2 != 0:
-            return (3 * number) + 1
+    if number < 1:
+        raise ValueError("Only positive integers are allowed")
+    count = 0
+    while number != 1:
+        if number % 2 == 0:
+            number = number / 2
+        else:
+            number = number * 3 + 1
+        count += 1
+    return count
