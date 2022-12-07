@@ -1,10 +1,5 @@
-# In this exercise, you need to implement some rules from Pac-Man, the classic 1980s-era arcade-game.
-# Define if Pac-Man eats a ghost
-# Define if Pac-Man scores
-# Define if Pac-Man loses
-# Define if Pac-Man wins
-
 """Functions for implementing the rules of the classic arcade game Pac-Man."""
+
 
 def eat_ghost(power_pellet_active, touching_ghost):
     """Verify that Pac-Man can eat a ghost if he is empowered by a power pellet.
@@ -13,7 +8,10 @@ def eat_ghost(power_pellet_active, touching_ghost):
     :return: bool - can the ghost be eaten?
     """
 
-    pass
+    if power_pellet_active and touching_ghost:
+        return True 
+    else:
+        return False
 
 
 def score(touching_power_pellet, touching_dot):
@@ -23,7 +21,10 @@ def score(touching_power_pellet, touching_dot):
     :return: bool - has the player scored or not?
     """
 
-    pass
+    if touching_power_pellet or touching_dot:
+        return True
+    else:
+        return False
 
 
 def lose(power_pellet_active, touching_ghost):
@@ -33,11 +34,17 @@ def lose(power_pellet_active, touching_ghost):
     :return: bool - has the player lost the game?
     """
 
-    pass
-
+    while True:
+        if power_pellet_active and touching_ghost:
+            return True
+    else:
+        if power_pellet_active:
+            return False
+        
 
 def win(has_eaten_all_dots, power_pellet_active, touching_ghost):
     """Trigger the victory event when all dots have been eaten.
+
     :param has_eaten_all_dots: bool - has the player "eaten" all the dots?
     :param power_pellet_active: bool - does the player have an active power pellet?
     :param touching_ghost: bool - is the player touching a ghost?
