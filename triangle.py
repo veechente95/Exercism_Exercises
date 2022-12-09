@@ -5,17 +5,24 @@
 # A scalene triangle has all sides of different lengths.
 
 def equilateral(sides):
-    if sides == sides:
+    a = sides[0]
+    b = sides[1]
+    c = sides[2]
+    if a == b and c:
         return True
-    elif sides != sides:
-        return True
+    elif a != b or c:
+        return False
     else:
-        return True
-
+        return False
 
 def isosceles(sides):
-    pass
+    a = sides[0]
+    b = sides[1]
+    c = sides[2]
+    if (a == b or c) or (b == a or c) or (c == a or b):
+        return True]
 
 
 def scalene(sides):
     pass
+
