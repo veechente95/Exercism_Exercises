@@ -23,8 +23,7 @@ CHOICE = 11
 
 
 def score(dice, category):
-    for number in dice:
-        counts = [dice.count(number)]
+    counts = [dice.count(number) for number in dice]
     if category == YACHT:
         return 50 * (5 in counts)
     if category < FULL_HOUSE: #ONES - SIXES
@@ -39,4 +38,5 @@ def score(dice, category):
         return 30 * (all([count == 1 for count in counts]) and 1 not in dice)
     if category == CHOICE:
         return sum(dice)
-    return 0
+    else:
+        return 0
