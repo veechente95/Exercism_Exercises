@@ -6,13 +6,11 @@
 import random
 
 def private_key(p):
-    return p.random > 1 and p.random < p
-
+    return random.randrange(2, p)
 
 def public_key(p, g, private):
-    return 
-
+    return pow(g, private, p)
 
 def secret(p, public, private):
-    pass
+    return pow(public, private, p)
 
