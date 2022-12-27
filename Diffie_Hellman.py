@@ -3,15 +3,16 @@
 # Alice and Bob use Diffie-Hellman key exchange to share secrets. 
 # They start with prime numbers, pick private keys, generate and share public keys, and then generate a shared secret key.
 
+import random
+
 def private_key(p):
-    pass
+    return p.random > 1 and p.random < p
 
 
 def public_key(p, g, private):
-    pass
+    return 
 
 
 def secret(p, public, private):
     pass
 
-# finish this later 
