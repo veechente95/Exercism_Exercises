@@ -41,7 +41,14 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
     where generated power = voltage * current
     """
 
-    pass
+     if temperature < 800:
+        return True
+    if neutrons_emitted > 500:
+        return True
+    if (temperature * neutrons_emitted) < 500000:
+        return True 
+    else:
+        return Fals
 
 
 def fail_safe(temperature, neutrons_produced_per_second, threshold):
