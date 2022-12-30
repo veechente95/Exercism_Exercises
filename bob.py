@@ -7,7 +7,15 @@
 # Bob's conversational partner is a purist when it comes to written communication and always follows normal rules regarding sentence punctuation in English.
 
 def response(hey_bob):
-    if response(hey_bob.capitalize):
-        return "Whoa, chill out!"
-    else:
-        return 'Whatever'
+    hey_bob = hey_bob.rstrip()
+    if not hey_bob:
+        return 'Fine. Be that way!'
+    is_shout = hey_bob.isupper()
+    is_question = hey_bob.endswith('?')
+    if is_shout:
+        if is_question:
+            return "Calm down, I know what I'm doing!"
+        return 'Whoa, chill out!'
+    if is_question:
+        return 'Sure.'
+    return 'Whatever.' 
