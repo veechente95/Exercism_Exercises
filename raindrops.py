@@ -12,3 +12,21 @@
    # 28 has 7 as a factor, but not 3 or 5, so the result would be "Plong".
    # 30 has both 3 and 5 as factors, but not 7, so the result would be "PlingPlang".
    # 34 is not factored by 3, 5, or 7, so the result would be "34".
+
+   def convert(number):
+    if number % 3 == 0 and number % 5 == 0 and number % 7 == 0:
+        return "PlingPlangPlong"
+    elif number % 3 == 0 and number % 5 == 0:
+        return "PlingPlang"
+    elif number % 5 == 0 and number % 7 == 0:
+        return "PlangPlong"
+    elif number % 3 == 0 and number % 7 == 0:
+        return "PlingPlong"
+    elif number % 3 == 0:
+        return "Pling"
+    elif number % 5 == 0:
+        return "Plang"
+    elif number % 7 == 0:
+        return "Plong"
+    else:
+        return str(number)
