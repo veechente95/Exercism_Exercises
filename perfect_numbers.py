@@ -12,9 +12,24 @@
   # 8 is a deficient number because (1 + 2 + 4) = 7
   # Prime numbers are deficient
   
-  def classify(number):
+def classify(number):
     """ A perfect number equals the sum of its positive divisors.
-
     :param number: int a positive integer
     :return: str the classification of the input integer
     """
+
+    if number <= 0:
+        raise ValueError("Classification is only possible for positive integers.")
+
+    factors = []
+    for i in range(1, number + 1):
+        if number % i == 0:
+            factor_num = factors.append(i)
+
+    if factor_num == number:
+        return "perfect"
+    elif factor_num > number:
+        return "abundant"
+    elif factor_num < number:
+        return "deficient"
+
