@@ -18,15 +18,16 @@ def classify(number):
     :return: str the classification of the input integer
     """
 
+    factors = []
+    for i in range(1, number):
+        if number % i == 0:
+            factors.append(i)
+
+    factor_num = sum(factors)
+    
     if number <= 0:
         raise ValueError("Classification is only possible for positive integers.")
-
-    factors = []
-    for i in range(1, number + 1):
-        if number % i == 0:
-            factor_num = factors.append(i)
-
-    if factor_num == number:
+    elif factor_num == number:
         return "perfect"
     elif factor_num > number:
         return "abundant"
