@@ -1,5 +1,3 @@
-import random 
-
 def get_rounds(number):
     """Create a list containing the current and next two round numbers."""
     return[number, number + 1, number + 2]
@@ -12,24 +10,20 @@ def concatenate_rounds(rounds_1, rounds_2):
 
 
 def list_contains_round(rounds, number):
-    """Check if the list of rounds contains the specified number.
-
-    :param rounds: list - rounds played.
-    :param number: int - round number.
-    :return: bool - was the round played?
-    """
-
-    pass
+    """Check if the list of rounds contains the specified number."""
+    if number in rounds:
+        return True
+    else:
+        return False
 
 
 def card_average(hand):
-    """Calculate and returns the average card value from the list.
+    """Calculate and returns the average card value from the list."""
+    num_cards = len(hand)
+    sum_cards = sum(hand)
+    average = sum_cards / num_cards
+    return average
 
-    :param hand: list - cards in hand.
-    :return: float - average value of the cards in the hand.
-    """
-
-    pass
 
 
 def approx_average_is_average(hand):
