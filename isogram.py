@@ -8,3 +8,10 @@
 ## downstream
 ## six-year-old
 
+from string import ascii_lowercase as alphabet
+
+
+def is_isogram(phrase):
+    phrase = phrase.lower()
+    letters = [letter for letter in phrase if letter in alphabet]
+    return len(set(letters)) == len(letters)
