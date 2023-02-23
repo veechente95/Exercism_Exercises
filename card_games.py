@@ -36,13 +36,15 @@ def approx_average_is_average(hand):
 
 
 def average_even_is_average_odd(hand):
-    """Return if the (average of even indexed card values) == (average of odd indexed card values).
+    """Return if the (average of even indexed card values) == (average of odd indexed card values)."""
+    avg = card_average(hand)
+    even_avg = (sum(hand[0::2]) / 2)
+    odd_avg = (sum(hand[1::2]) / 2)
+    if (even_avg == avg) or (odd_avg == avg):
+        return True
+    else:
+        return False
 
-    :param hand: list - cards in hand.
-    :return: bool - are even and odd averages equal?
-    """
-
-    pass
 
 
 def maybe_double_last(hand):
