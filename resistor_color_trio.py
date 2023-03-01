@@ -12,9 +12,22 @@ color_dict = {
 }
 
 
-def color_code(color):
-    return color_dict[color]
+def label(colors):
+    color1 = color_dict[colors[0]]
+    color2 = color_dict[colors[1]]
+    color3 = color_dict[colors[2]] * '0'
+    value = int(f'{color1}{color2}{color3}')
 
+    if value // 1000 == 0:
+        final_value = f'{value} ohms'
 
-def colors():
-    return [key for key in color_dict]
+    elif value // 1000 ** 1 < 1000:
+        final_value = f'{value // 1000 ** 1} kiloohms'
+
+    elif value // 1000 ** 2 < 1000:
+        final_value = f'{value // 1000 ** 2} megaohms'
+
+    elif value // 1000 ** 3 < 1000:
+        final_value = f'{value // 1000 ** 3} gigaohms'
+    
+    return final_value
