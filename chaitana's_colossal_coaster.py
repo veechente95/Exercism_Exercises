@@ -29,24 +29,15 @@ def remove_the_mean_person(queue, person_name):
 
 def how_many_namefellows(queue, person_name):
     """Count how many times the provided name appears in the queue."""
-    
+    return queue.count(person_name)
 
 
 def remove_the_last_person(queue):
-    """Remove the person in the last index from the queue and return their name.
-
-    :param queue: list - names in the queue.
-    :return: str - name that has been removed from the end of the queue.
-    """
-
-    pass
+    """Remove the person in the last index from the queue and return their name."""
+    return queue.pop(-1)
 
 
 def sorted_names(queue):
-    """Sort the names in the queue in alphabetical order and return the result.
-
-    :param queue: list - names in the queue.
-    :return: list - copy of the queue in alphabetical order.
-    """
-
-    pass
+    """Sort the names in the queue in alphabetical order and return the result."""
+    queue.sort()
+    return queue
