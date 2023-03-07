@@ -18,16 +18,14 @@ def count_failed_students(student_scores):
 
 
 def above_threshold(student_scores, threshold):
-    """Determine how many of the provided student scores were 'the best' based on the provided threshold.
+    """Determine how many of the provided student scores were 'the best' based on the provided threshold."""
+    top_students = []
+    for score in student_scores:
+        if score >= threshold:
+            top_students.append(score)
+    return top_students
 
-    :param student_scores: list - of integer scores.
-    :param threshold: int - threshold to cross to be the "best" score.
-    :return: list - of integer scores that are at or above the "best" threshold.
-    """
-
-    pass
-
-
+    
 def letter_grades(highest):
     """Create a list of grade thresholds based on the provided highest grade.
 
