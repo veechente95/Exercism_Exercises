@@ -7,14 +7,14 @@ def round_scores(student_scores):
         rounded_score.append(round(student_scores.pop()))
     return rounded_score
 
+
 def count_failed_students(student_scores):
-    """Count the number of failing students out of the group provided.
-
-    :param student_scores: list - containing int student scores.
-    :return: int - count of student scores at or below 40.
-    """
-
-    pass
+    """Count the number of failing students out of the group provided."""
+    failed = 0
+    for score in student_scores:
+        if score <= 40:
+            failed += 1
+    return failed
 
 
 def above_threshold(student_scores, threshold):
