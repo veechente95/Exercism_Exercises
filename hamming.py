@@ -1,4 +1,5 @@
 def distance(strand_a, strand_b):
-    for letter in strand_a and strand_b:
-        if letter != letter:
-            return letter.count(letter)
+    if len(strand_a) != len(strand_b):
+        raise ValueError('Length must be equal')
+    errors = [a != b for a, b in zip(strand_a, strand_b)]
+    return sum(errors)
