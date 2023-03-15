@@ -27,3 +27,9 @@ def create_record(azara_record, rui_record):
         return "not a match"
     
  
+def clean_up(combined_record_group):
+    """Clean up a combined record group into a multi-line string of single records."""
+    result = ""
+    for record in combined_record_group:
+        result += str(record[:1] + record[2:]) +"\n"
+    return result
